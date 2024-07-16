@@ -1,8 +1,8 @@
-export interface Employee {
+export type Employee = {
   id: number;
   name: string;
-  isArchived: boolean;
+  isArchive: boolean;
   role: string;
   phone: string;
   birthday: string;
-}
+};

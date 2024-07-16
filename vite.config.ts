@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
+      app: '/src/app',
       api: '/src/api',
       assets: '/src/assets',
       context: '/src/context',
@@ -15,6 +16,9 @@ export default defineConfig({
       types: '/src/types',
       ui: '/src/ui',
       store: '/src/store',
+      entities: '/src/entities',
+      widgets: '/src/widgets',
+      shared: '/src/shared',
     },
   },
 });

@@ -9,7 +9,7 @@
     "skipLibCheck": true,
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -19,6 +19,7 @@
 
     "baseUrl": "src",
     "paths": {
+      "app/*": ["app/*"],
       "api/*":  ["api/*"],
       "assets/*": ["assets/*"],
       "context/*": ["context/*"],
@@ -27,7 +28,10 @@
       "pages/*": ["pages/*"],
       "types/*": ["types/*"],
       "ui/*": ["ui/*"],
-      "store/*": ["store/*"]
+      "store/*": ["store/*"],
+      "entities/*": ["entities/*"],
+      "widgets/*": ["widgets/*"],
+      "shared/*": ["shared/*"],
     },
 
     /* Linting */

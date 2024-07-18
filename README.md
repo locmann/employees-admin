@@ -1,30 +1,7 @@
-# React + TypeScript + Vite
+## Важно
+Для корректной работы требуется [сервер](https://github.com/locmann/emloyees-server)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Описание логики
+1. При открытии приложения появляется список сотрудников и форма для их фильтрации. У каждого из сотрудников в списке отображается его имя, должность и номер телефона. Фильтровать сотрудников можно по их должности и их статусу. Должность - выпадающий список, содержащий (Повар, Официант, Водитель). Статус - чекбокс с лейблом "в архиве".
+2. При нажатии в списке на одного из сотрудников появляется страница с формой редактирования данных сотрудника. Форма редактирования имеет поля: имя сотрудника - текстовое поле, телефон - текстовое поле с маской, дата рождения - текстовое поле с маской, должность - выпадающий список, содержащий (Повар, Официант, Водитель), статус - чекбокс с лейблом "в архиве".
+3. Приложение позволяет добавлять новых сотрудников в систему и удалять старых.

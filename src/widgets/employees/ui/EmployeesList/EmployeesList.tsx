@@ -1,33 +1,29 @@
 import { selectEmployee } from 'entities/employees/model/employeesSlice.ts';
 import { EmployeeCard } from 'entities/employees';
 import { useAppSelector } from 'app/store.ts';
-import { selectFilterPosition, selectFilterStatus } from 'entities/filters/model/filtersSlice.ts';
-import { Position } from 'entities/filters';
+import {
+  selectDateSortMode,
+  selectFilterPosition,
+  selectFilterStatus,
+  selectNameSortMode,
+} from 'entities/filters/model/filtersSlice.ts';
+import { renderList } from 'shared/helpers/renderList.ts';
 
 const EmployeesList = () => {
   const employees = useAppSelector(selectEmployee);
   const position = useAppSelector(selectFilterPosition);
   const isArchive = useAppSelector(selectFilterStatus);
+  const nameSortMode = useAppSelector(selectNameSortMode);
+  const dateSortMode = useAppSelector(selectDateSortMode);
 
   return (
     <>
-      {employees
-        .filter((employee) => {
-          return position === Position.Empty || employee.role === position;
-        })
-        .filter((employee) => {
-          if (isArchive) {
-            return employee.isArchive;
-          } else {
-            return true;
-          }
-        })
-        .map((employee) => (
-          <EmployeeCard
-            item={employee}
-            key={employee.id}
-          />
-        ))}
+      {renderList(employees, position, isArchive, nameSortMode, dateSortMode).map((employee) => (
+        <EmployeeCard
+          item={employee}
+          key={employee.id}
+        />
+      ))}
     </>
   );
 };

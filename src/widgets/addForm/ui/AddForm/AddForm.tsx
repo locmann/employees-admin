@@ -36,7 +36,7 @@ const AddForm = () => {
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const requestData = {
       id: employees[employees.length - 1].id + 1,
-      isArchive: data.isArchive,
+      isArchive: !!data.isArchive,
       birthday: formatDate(data.birthday),
       phone: data.phone,
       role: RuPositionToPositionMap[data.role],

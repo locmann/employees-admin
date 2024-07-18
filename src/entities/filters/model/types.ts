@@ -25,3 +25,27 @@ export const PositionToRuPositionMap = {
   [Position.Driver]: RuPosition.Driver,
   [Position.Cook]: RuPosition.Cook,
 };
+
+export enum SortMode {
+  None = ' - ',
+  Asc = 'asc',
+  Desc = 'desc',
+}
+
+export enum RuSortMode {
+  None = ' - ',
+  Asc = 'Возрастание',
+  Desc = 'Убывание',
+}
+
+export const RuSortModeToSortModeMap = {
+  [RuSortMode.None]: SortMode.None,
+  [RuSortMode.Asc]: SortMode.Asc,
+  [RuSortMode.Desc]: SortMode.Desc,
+};
+
+export const SortModeToRuSortModeMap = {
+  [SortMode.None]: RuSortMode.None,
+  [SortMode.Asc]: RuSortMode.Asc,
+  [SortMode.Desc]: RuSortMode.Desc,
+};
